@@ -1,0 +1,37 @@
+:root{
+  --main-blue : rgb(0, 225, 255);
+}
+
+.nav-item{
+  margin-inline: 20px !important;
+  margin-block : 10px !important;
+}
+.nav-link{
+  border-bottom: 2px solid transparent;
+  transition: 0.5s all ease-in;
+  color: var(--main-blue) !important;
+}
+.nav-link:hover, .nav-link:active, .nav-link:focus{
+  border-color: var(--main-blue) !important;
+  transition: 0.5s all ease-in;
+}
+button{
+  background-color: var(--main-blue) !important;
+  color: black !important;
+  border: 2px solid var(--main-blue) !important;
+  transition: 0.5s all ease-in;
+
+}
+button:hover{
+  background-color: white !important;
+  transition: 0.5s all ease-in;
+  color: var(--main-blue) !important;
+
+}
+#result{
+  color: var(--main-blue);
+}
+h1{
+  color: var(--main-blue);
+}
+
