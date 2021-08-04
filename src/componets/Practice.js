@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import profilePic from '../images/R.jpg'
 
 var data = [
     {
@@ -234,53 +235,82 @@ var data = [
 ]
 
 
-export default class Practice extends Component {
-    render() {
-        return (
-            <>
-                <div className="options text-center my-4">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user1" value="1" />
-                        <label class="form-check-label" for="user1"> USER-1</label>
+export const Practice = () => {
+    return (
+        <>
+            <form action="#" className="text-center" method="post">
+                <div className="options my-4">
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user1" value="1" />
+                        <label className="form-check-label" htmlFor="user1"> USER-1</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user2" value="2" />
-                        <label class="form-check-label" for="user2"> USER-2</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user2" value="2" />
+                        <label className="form-check-label" htmlFor="user2"> USER-2</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user3" value="3" />
-                        <label class="form-check-label" for="user3"> USER-3</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user3" value="3" />
+                        <label className="form-check-label" htmlFor="user3"> USER-3</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user4" value="4" />
-                        <label class="form-check-label" for="user4"> USER-4</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user4" value="4" />
+                        <label className="form-check-label" htmlFor="user4"> USER-4</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user5" value="5" />
-                        <label class="form-check-label" for="user5"> USER-5</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user5" value="5" />
+                        <label className="form-check-label" htmlFor="user5"> USER-5</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user6" value="6" />
-                        <label class="form-check-label" for="user6"> USER-6</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user6" value="6" />
+                        <label className="form-check-label" htmlFor="user6"> USER-6</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user7" value="7" />
-                        <label class="form-check-label" for="user7"> USER-7</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user7" value="7" />
+                        <label className="form-check-label" htmlFor="user7"> USER-7</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user8" value="8" />
-                        <label class="form-check-label" for="user8"> USER-8</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user8" value="8" />
+                        <label className="form-check-label" htmlFor="user8"> USER-8</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user9" value="8" />
-                        <label class="form-check-label" for="user9"> USER-9</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user9" value="9" />
+                        <label className="form-check-label" htmlFor="user9"> USER-9</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="userId" id="user10" value="8" />
-                        <label class="form-check-label" for="user10"> USER-10</label>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="userId" id="user10" value="10" />
+                        <label className="form-check-label" htmlFor="user10"> USER-10</label>
                     </div>
                 </div>
-            </>
-        )
-    }
+                <div className="submit">
+                    <button className="btn" onClick={e => detailsId(e)}>Show</button>
+                </div>
+            </form>
+
+
+
+        </>
+    )
 }
+function detailsId(e) {
+    e.preventDefault();
+    var id = document.getElementsByName('userId')[0].value;
+    console.log(id);
+        <div className="text-center my-4" style={{ marginLeft: 550 }}>
+            {data.filter(user => user.id === (id-1)).map(user => (
+                
+                    <div className="card text-center my-4" style={{ width: 400 }}>
+                        <img src={profilePic} className="card-img-top" alt="profile pic" />
+                        <div className="card-body">
+                            <h4 className="card-title my-49510">{user.name}</h4>
+                            <h6 className="card-text">Username : {user.username}</h6>
+                            <h6 className="card-text">E-Mail : {user.email}</h6>
+                            <h6 className="card-text">Phone : {user.phone}</h6>
+                            <a href="#" className="btn btn-primary my-4">Show More Details</a>
+                        </div>
+                    </div>
+            ))}
+        </div>
+}
+
+
+

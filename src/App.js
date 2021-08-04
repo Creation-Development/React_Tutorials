@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import ClassComponent from './componets/ClassComponent';
 import { FunctionComponent } from './componets/FunctionComponent';
 import { Navbar } from './componets/Navbar';
-import Practice from './componets/Practice';
+import { Practice } from './componets/Practice';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
