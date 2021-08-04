@@ -3,7 +3,10 @@ function sum(e) {
     e.preventDefault()
     var num1 = document.getElementById('num1').value
     var num2 = document.getElementById('num2').value
-    if (num1 == '' || num1 == null && num2 == '' || num2 == null) {
+    if (num1 === '' || num1 === null ) {
+        alert("Enter Number For Addition...")
+    }
+    else if(num2 === '' || num2 === null){
         alert("Enter Number For Addition...")
     }
     else {

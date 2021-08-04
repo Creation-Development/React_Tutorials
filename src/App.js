@@ -3,8 +3,9 @@ import { Form } from './componets/Form';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ClassComponent from './componets/ClassComponent';
 import { FunctionComponent } from './componets/FunctionComponent';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Navbar } from './componets/Navbar';
+import Practice from './componets/Practice';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route exact path="/function-component">
           <FunctionComponent/>
+        </Route>
+        <Route exact path="/other">
+          <Practice/>
         </Route>
       </Switch>
     </BrowserRouter>

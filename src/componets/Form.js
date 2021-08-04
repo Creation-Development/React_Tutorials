@@ -38,16 +38,16 @@ var show = (e) => {
     var email = document.getElementById('email').value
     var phone = document.getElementById('phone').value
     var pass = document.getElementById('pass').value
-    if(fullname == ''  ||fullname == null){
+    if(fullname === ''  ||fullname === null){
         alert("Fields can't be empty....")
     }
-    else if(email == '' || email == null){
+    else if(email === '' || email === null){
         alert("Fields can't be empty....")
     }
-    else if(phone == '' || phone == null){
+    else if(phone === '' || phone === null){
         alert("Fields can't be empty....")
     }
-    else if(pass == '' || pass == null){
+    else if(pass === '' || pass === null){
         alert("Fields can't be empty....")
     }
     else{
