@@ -302,7 +302,6 @@ var detailsId = (e) => {
             var useridNum = id[i].value;
         }
         var userDetails = data.filter(user => user.id == useridNum)
-        console.log(userDetails);
         var user = userDetails[0]
         document.getElementById('userData').innerHTML=`<div className="text-center my-4"><div className="card text-center my-4" style=${{ width: 400 }}><img src=${profilePic} className="card-img-top" alt="profile pic" height="300" width="400"/><div className="card-body"><h4 className="card-title my-4">${user.name}</h4><h6 className="card-text">Username : ${user.username}</h6><h6 className="card-text">E-Mail : ${user.email}</h6><h6 className="card-text">Phone : ${user.phone}</h6><button href="#" className="showdata btn btn-primary my-4">Show More Details</button></div></div></div> `
 }

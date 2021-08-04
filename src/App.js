@@ -22,7 +22,7 @@ function App() {
         <Route exact path="/function-component">
           <FunctionComponent/>
         </Route>
-        <Route exact path="/other">
+        <Route exact path="/user-data">
           <Practice/>
         </Route>
       </Switch>

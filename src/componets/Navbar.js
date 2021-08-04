@@ -23,7 +23,7 @@ export const Navbar = () => {
                                 <Link className="nav-link" to="/function-component">Function-Component</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/other">Other</Link>
+                                <Link className="nav-link" to="/user-data">User Data</Link>
                             </li>
                         </ul>
                     </div>
