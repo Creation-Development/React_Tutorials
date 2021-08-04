@@ -18,6 +18,8 @@
 button{
   background-color: var(--main-blue) !important;
   color: black !important;
+  padding: 10px;
+  border-radius: 10px !important;
   border: 2px solid var(--main-blue) !important;
   transition: 0.5s all ease-in;
 

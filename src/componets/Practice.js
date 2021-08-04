@@ -285,32 +285,28 @@ export const Practice = () => {
                     <button className="btn" onClick={e => detailsId(e)}>Show</button>
                 </div>
             </form>
+            <div id="userData" className="text-center"  style={{ marginTop: 50 }}>
+                
+            </div> 
 
 
 
         </>
     )
 }
-function detailsId(e) {
+var detailsId = (e) => {
     e.preventDefault();
-    var id = document.getElementsByName('userId')[0].value;
-    console.log(id);
-        <div className="text-center my-4" style={{ marginLeft: 550 }}>
-            {data.filter(user => user.id === (id-1)).map(user => (
-                
-                    <div className="card text-center my-4" style={{ width: 400 }}>
-                        <img src={profilePic} className="card-img-top" alt="profile pic" />
-                        <div className="card-body">
-                            <h4 className="card-title my-49510">{user.name}</h4>
-                            <h6 className="card-text">Username : {user.username}</h6>
-                            <h6 className="card-text">E-Mail : {user.email}</h6>
-                            <h6 className="card-text">Phone : {user.phone}</h6>
-                            <a href="#" className="btn btn-primary my-4">Show More Details</a>
-                        </div>
-                    </div>
-            ))}
-        </div>
+    var id = document.getElementsByName('userId');
+    for (let i = 0; i < id.length; i++) {
+        if (id[i].checked)
+            var useridNum = id[i].value;
+        }
+        var userDetails = data.filter(user => user.id == useridNum)
+        console.log(userDetails);
+        var user = userDetails[0]
+        document.getElementById('userData').innerHTML=`<div className="text-center my-4"><div className="card text-center my-4" style=${{ width: 400 }}><img src=${profilePic} className="card-img-top" alt="profile pic" height="300" width="400"/><div className="card-body"><h4 className="card-title my-4">${user.name}</h4><h6 className="card-text">Username : ${user.username}</h6><h6 className="card-text">E-Mail : ${user.email}</h6><h6 className="card-text">Phone : ${user.phone}</h6><button href="#" className="showdata btn btn-primary my-4">Show More Details</button></div></div></div> `
 }
 
 
+                
 
