@@ -242,7 +242,7 @@ export const DataOption = () => {
             <Container className="my-4 text-center">
                 <Form.Group className="text-center" controlId="formGridState">
                     <Form.Label>Select User</Form.Label>
-                    <Form.Select id="user" style={{marginLeft:320}} className="w-50" defaultValue="1">
+                    <Form.Select id="user" style={{marginLeft:490}} className="w-25" defaultValue="1">
                         <option value="1">User-1</option>
                         <option value="2">User-2</option>
                         <option value="3">User-3</option>
@@ -252,7 +252,9 @@ export const DataOption = () => {
                         <option value="7">User-7</option>
                         <option value="8">User-8</option>
                         <option value="9">User-9</option>
-                        <option value="10">User-10</option> 
+                        <option value="10">User-10</option>
+                        
+                    
                     </Form.Select>
                 </Form.Group>
                 <Button className="my-4" onClick={e => showData(e)}>Show User</Button>
