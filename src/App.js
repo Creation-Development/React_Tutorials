@@ -7,6 +7,8 @@ import { Navbar } from './componets/Navbar';
 import { Practice } from './componets/Practice';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { DataOption } from './componets/DataOption';
+import ClassCounter from './componets/ClassCounter';
+import { FunctionCounter } from './componets/FunctionCounter';
 
 function App() {
   return (
@@ -17,11 +19,17 @@ function App() {
         <Route exact path="/">
           <Form/>
         </Route>
-        <Route exact path="/class-component">
+        <Route exact path="/class-component-addition">
           <ClassComponent/>
         </Route>
-        <Route exact path="/function-component">
+        <Route exact path="/class-component-counter">
+          <ClassCounter/>
+        </Route>
+        <Route exact path="/function-component-addition">
           <FunctionComponent/>
+        </Route>
+        <Route exact path="/function-component-counter">
+          <FunctionCounter/>
         </Route>
         <Route exact path="/user-data-radio">
           <Practice/>

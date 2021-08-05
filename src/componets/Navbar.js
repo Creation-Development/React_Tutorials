@@ -17,12 +17,14 @@ export const Navbar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page" to="/">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/class-component">Class-Component</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/function-component">Function-Component</Link>
-                            </li>
+                            <NavDropdown title="Class Component" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/class-component-addition">Addition</NavDropdown.Item>
+                                <NavDropdown.Item href="/class-component-counter">Counter</NavDropdown.Item>
+                            </NavDropdown>
+                            <NavDropdown title="Function Component" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/function-component-addition">Addition</NavDropdown.Item>
+                                <NavDropdown.Item href="/function-component-counter">Counter</NavDropdown.Item>
+                            </NavDropdown>
                             <NavDropdown title="User-Data" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/user-data-radio">Data-Radio</NavDropdown.Item>
                                 <NavDropdown.Item href="/user-data-option">Data-Option</NavDropdown.Item>
