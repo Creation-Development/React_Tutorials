@@ -6,6 +6,7 @@ import { FunctionComponent } from './componets/FunctionComponent';
 import { Navbar } from './componets/Navbar';
 import { Practice } from './componets/Practice';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { DataOption } from './componets/DataOption';
 
 function App() {
   return (
@@ -22,8 +23,11 @@ function App() {
         <Route exact path="/function-component">
           <FunctionComponent/>
         </Route>
-        <Route exact path="/user-data">
+        <Route exact path="/user-data-radio">
           <Practice/>
+        </Route>
+        <Route exact path="/user-data-option">
+          <DataOption/>
         </Route>
       </Switch>
     </BrowserRouter>
