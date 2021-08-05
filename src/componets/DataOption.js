@@ -242,19 +242,10 @@ export const DataOption = () => {
             <Container className="my-4 text-center">
                 <Form.Group className="text-center" controlId="formGridState">
                     <Form.Label>Select User</Form.Label>
-                    <Form.Select id="user" style={{marginLeft:490}} className="w-25" defaultValue="1">
-                        <option value="1">User-1</option>
-                        <option value="2">User-2</option>
-                        <option value="3">User-3</option>
-                        <option value="4">User-4</option>
-                        <option value="5">User-5</option>
-                        <option value="6">User-6</option>
-                        <option value="7">User-7</option>
-                        <option value="8">User-8</option>
-                        <option value="9">User-9</option>
-                        <option value="10">User-10</option>
-                        
-                    
+                    <Form.Select id="user" style={{ marginLeft: 490 }} className="w-25" defaultValue="1">
+                        {data.map(id => (
+                            <option value={id.id}>User-{id.id}</option>
+                        ))}
                     </Form.Select>
                 </Form.Group>
                 <Button className="my-4" onClick={e => showData(e)}>Show User</Button>
@@ -265,10 +256,10 @@ export const DataOption = () => {
         </>
     )
 }
-var showData = (e) =>{
+var showData = (e) => {
     e.preventDefault();
     var id = document.getElementById("user").value;
     var detail = data.filter(user => user.id == id)
     var user = detail[0]
-    document.getElementById('userData').innerHTML=`<div className="text-center my-4"><div className="card text-center my-4" style=${{ width: 400 }}><img src=${profilePic} className="card-img-top" alt="profile pic" height="300" width="400"/><div className="card-body"><h4 className="card-title my-4">${user.name}</h4><h6 className="card-text">Username : ${user.username}</h6><h6 className="card-text">E-Mail : ${user.email}</h6><h6 className="card-text">Phone : ${user.phone}</h6><button href="#" className="showdata btn btn-primary my-4">Show More Details</button></div></div></div> `
+    document.getElementById('userData').innerHTML = `<div className="text-center my-4"><div className="card text-center my-4" style=${{ width: 400 }}><img src=${profilePic} className="card-img-top" alt="profile pic" height="300" width="400"/><div className="card-body"><h4 className="card-title my-4">${user.name}</h4><h6 className="card-text">Username : ${user.username}</h6><h6 className="card-text">E-Mail : ${user.email}</h6><h6 className="card-text">Phone : ${user.phone}</h6><button href="#" className="showdata btn btn-primary my-4">Show More Details</button></div></div></div> `
 }
