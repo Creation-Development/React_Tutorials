@@ -6,7 +6,7 @@ export default class ClassCounter extends Component {
         return (
             <>
             <div className="text-center my-4">
-            <h1>Conter Using Class Component</h1>
+            <h1>Counter Using Class Component</h1>
         </div>
             <Container className="text-center" style={{marginTop:200}}>
                 <ButtonGroup aria-label="Basic example">
