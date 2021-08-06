@@ -602,22 +602,9 @@ export const DataOption = () => {
         </Form.Group>
         <Button className="my-4" onClick={e => showData(e)}>Show User</Button>
       </Container>
+      <Container className="text-center">
       <div id="userData" className="text-center">
       </div>
-
-      <Container>
-      <Table striped bordered hover className="my-4">
-        <thead>
-              <tr>
-                <th>PostId</th>
-                <th>Name</th>
-                <th>E-Mail</th>
-                <th>Comment</th>
-              </tr>
-            </thead>
-          <tbody id="tbody">
-          </tbody>
-        </Table>
       </Container>
 
     </>
@@ -628,11 +615,6 @@ var showData = (e) => {
   var id = document.getElementById("user").value;
   var detail = data.filter(user => user.id == id)
   var user = detail[0]
-  document.getElementById('userData').innerHTML = `<div className="text-center my-4"><div className="card text-center my-4" style=${{ width: 400 }}><img src=${profilePic} className="card-img-top" alt="profile pic" height="300" width="400"/><div className="card-body"><h4 className="card-title my-4">${user.name}</h4><h6 className="card-text">Username : ${user.username}</h6><h6 className="card-text">E-Mail : ${user.email}</h6><h6 className="card-text">Phone : ${user.phone}</h6><button href="#" className="showdata btn btn-primary my-4">Show More Details</button></div></div></div> `
-  var comments = userComment.filter(comment => comment.postId == id)
-  document.getElementById("tbody").innerHTML  = null
-  for (let i = 0; i < comments.length; i++) {
-    var comment = comments[i]
-    document.getElementById("tbody").innerHTML += `<tr><td>${comment.id}</td><td>${comment.name}</td><td>${comment.email}</td><td>${comment.body}</td></tr>`
-  }
+  document.getElementById('userData').innerHTML = `<div className="text-center my-4"><div className="card text-center my-4" style=${{ width: 400 }}><img src=${profilePic} className="card-img-top" alt="profile pic" height="300" width="400"/><div className="card-body"><h4 className="card-title my-4">${user.name}</h4><h6 className="card-text">Username : ${user.username}</h6><h6 className="card-text">E-Mail : ${user.email}</h6><h6 className="card-text">Phone : ${user.phone}</h6><a href="/user/${user.id}" className="showdata btn btn-primary my-4">Show More Details</a></div></div></div> `
+  
 }

@@ -10,9 +10,9 @@ export default class ClassCounter extends Component {
         </div>
             <Container className="text-center" style={{marginTop:200}}>
                 <ButtonGroup aria-label="Basic example">
-                    <Button className="mx-4 p-4" onClick={e => del(e,document.getElementById('num').innerHTML)} style={{fontSize:25}}>-</Button>
+                    <Button className="mx-4 p-4" onClick={e => del(e)} style={{fontSize:25}}>-</Button>
                     <h1 className="data my-3" id="num">0</h1>
-                    <Button className="mx-4 p-4"  onClick={e => add(e,document.getElementById('num').innerHTML)} style={{fontSize:25}}>+</Button>
+                    <Button className="mx-4 p-4"  onClick={e => add(e)} style={{fontSize:25}}>+</Button>
                 </ButtonGroup>
             </Container>
             </>
@@ -22,12 +22,14 @@ export default class ClassCounter extends Component {
 var update = (num) => {
     document.getElementById('num').innerHTML = num
 }
-var add = (e,num) => {
+var add = (e) => {
     e.preventDefault();
+    var num = document.getElementById('num').innerHTML
     var newNum = parseInt(num) + 1
     update(newNum)
 }
-var del = (e,num) => {
+var del = (e) => {
+    var num = document.getElementById('num').innerHTML
     if(num <= "0"){
         alert("Vlaue Can't be Less then 0")
     }

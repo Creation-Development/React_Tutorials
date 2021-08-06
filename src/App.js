@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { DataOption } from './componets/DataOption';
 import ClassCounter from './componets/ClassCounter';
 import { FunctionCounter } from './componets/FunctionCounter';
+import UserData from './componets/UserData';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route exact path="/user-data-option">
           <DataOption/>
+        </Route>
+        <Route exact path="/user/:id">
+          <UserData/>
         </Route>
       </Switch>
     </BrowserRouter>
