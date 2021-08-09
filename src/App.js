@@ -10,6 +10,8 @@ import { DataOption } from './componets/DataOption';
 import ClassCounter from './componets/ClassCounter';
 import { FunctionCounter } from './componets/FunctionCounter';
 import UserData from './componets/UserData';
+import ClassState from './componets/ClassState';
+import FunctionState from './componets/FunctionState';
 
 function App() {
   return (
@@ -26,11 +28,17 @@ function App() {
         <Route exact path="/class-component-counter">
           <ClassCounter/>
         </Route>
+        <Route exact path="/class-component-state">
+          <ClassState/>
+        </Route>
         <Route exact path="/function-component-addition">
           <FunctionComponent/>
         </Route>
         <Route exact path="/function-component-counter">
           <FunctionCounter/>
+        </Route>
+        <Route exact path="/function-component-state">
+          <FunctionState/>
         </Route>
         <Route exact path="/user-data-radio">
           <Practice/>
