@@ -9,7 +9,7 @@ const FunctionState = () => {
         <>
             <div>
                 <div className="text-center">
-                    <h1 className="text-center my-4">Registeration Form</h1>
+                    <h1 className="text-center my-4">Function State Form</h1>
                 </div>
                 <form className="container-sm my-4">
                     <div className="mb-3">
@@ -39,7 +39,7 @@ export default FunctionState;
 
 function show(e,name,email,pass,phone){
     e.preventDefault()
-    console.log(`name : ${name}`);
+    console.log(`Name : ${name}`);
     console.log(`E-Mail : ${email}`);
     console.log(`Phone : ${phone}`);
     console.log(`Password : ${[pass]}`);

@@ -15,7 +15,7 @@ export default class ClassState extends Component {
             <>
                 <div>
                     <div className="text-center">
-                        <h1 className="text-center my-4">Registeration Form</h1>
+                        <h1 className="text-center my-4">Class State Form</h1>
                     </div>
                     <form className="container-sm my-4">
                         <div className="mb-3">
