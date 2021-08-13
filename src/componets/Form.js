@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const Form = () => {
+    const [flag, setFlag] = useState("false")
     return (
         <div>
             <div className="text-center">
@@ -23,8 +24,32 @@ export const Form = () => {
                     <label htmlFor="pass" className="form-label">Password</label>
                     <input type="password" className="form-control" id="pass"/>
                 </div>
-                <button type="submit" onClick={e=>show(e)} className="btn btn-success w-100 my-4">Submit</button>
+                <button type="submit" onClick={e=>show(e,setFlag)} className="btn btn-success w-100 my-4">Submit</button>
             </form>
+
+            {
+                flag === "true"?
+                <>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">{data.name}</td>
+                                <td>{data.email}</td>
+                                <td>{data.phone}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </>
+                :
+                <h1 className="text-center text-danger">No Data To Display</h1>
+            }
         </div>
     )
 }
@@ -32,7 +57,7 @@ var details = []
 var data = {}
 
 
-var show = (e) => {
+var show = (e,setFlag) => {
     e.preventDefault();
     var fullname = document.getElementById('name').value
     var email = document.getElementById('email').value
@@ -51,11 +76,12 @@ var show = (e) => {
         alert("Fields can't be empty....")
     }
     else{
-    data.name = fullname
-    data.email = email
-    data.phone = phone
-    data.password = pass
-    details.push(data)
-    console.log(details);
-}
+        setFlag('true')
+        data.name = fullname
+        data.email = email
+        data.phone = phone
+        data.password = pass
+        details.push(data)
+        console.log(details);
+    }
 }
