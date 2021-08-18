@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 var data = [
     {
@@ -236,14 +237,36 @@ var data = [
 
 function TableSearch() {
     const [search, setSearch] = useState("")
-    var result = [...data.filter(item => item.name.includes(search)),...data.filter(item => item.email.includes(search)),...data.filter(item => item.website.includes(search))];
+    const [value, setValue] = useState('Choose Field')
+    if (value == "Name") {
+        var result = [...data.filter(item => item.name.includes(search))];
+    }
+    if (value == "Email") {
+        var result = [...data.filter(item => item.email.includes(search))];
+    }
+    if (value == "Phone") {
+        var result = [...data.filter(item => item.phone.includes(search))];
+    }
+    if (value == "Website") {
+        var result = [...data.filter(item => item.website.includes(search))];
+    }
+    if (value == "All Field") {
+        var result = [...data.filter(item => item.name.includes(search)),...data.filter(item => item.email.includes(search)),...data.filter(item => item.phone.includes(search)),...data.filter(item => item.website.includes(search))];
+    }
     return (
         <>
 
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="container-fluid" style={{ marginLeft: 1200 }}>
+            <nav class="navbar navbar-dark bg-dark d-flex">
+                <div class="container-fluid" style={{ marginLeft: 900 }}>
+                    <DropdownButton id="dropdown-basic-button" title={`${value}`}>
+                        <Dropdown.Item onClick={(e) => (setValue("Name"))}>Name</Dropdown.Item>
+                        <Dropdown.Item onClick={(e) => (setValue("Email"))}>Email</Dropdown.Item>
+                        <Dropdown.Item onClick={(e) => (setValue("Phone"))}>Phone</Dropdown.Item>
+                        <Dropdown.Item onClick={(e) => (setValue("Website"))}>Website</Dropdown.Item>
+                        <Dropdown.Item onClick={(e) => (setValue("All Field"))}>All Field</Dropdown.Item>
+                    </DropdownButton>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" onChange={(e)=>(setSearch(e.target.value))} aria-label="Search" />
+                        <input class="form-control me-2" type="search" placeholder="Search" onChange={(e) => (setSearch(e.target.value))} aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
