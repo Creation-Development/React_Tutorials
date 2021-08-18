@@ -37,3 +37,12 @@ h1{
   color: var(--main-blue);
 }
 
+.MuiInputBase-input{
+  padding-left: 10px !important;
+  padding-top: -10px !important;
+  height: 10px !important;
+}
+.undefined.d-flex.text-center{
+  margin-left: 1000px !important;
+  margin-bottom: 20px !important;
+}

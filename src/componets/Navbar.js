@@ -26,6 +26,7 @@ export const Navbar = () => {
                                 <NavDropdown.Item href="/function-component-addition">Addition</NavDropdown.Item>
                                 <NavDropdown.Item href="/function-component-counter">Counter</NavDropdown.Item>
                                 <NavDropdown.Item href="/function-component-state">State</NavDropdown.Item>
+                                <NavDropdown.Item href="/table-search">Search Data</NavDropdown.Item>
                             </NavDropdown>
                             <NavDropdown title="User-Data" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/user-data-radio">Data-Radio</NavDropdown.Item>

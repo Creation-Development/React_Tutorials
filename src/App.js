@@ -12,6 +12,8 @@ import { FunctionCounter } from './componets/FunctionCounter';
 import UserData from './componets/UserData';
 import ClassState from './componets/ClassState';
 import FunctionState from './componets/FunctionState';
+import Name from './componets/Name';
+import TableSearch from './componets/TableSearch';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Form/>
+          <Name name="Harsh Gohil"/>
         </Route>
         <Route exact path="/class-component-addition">
           <ClassComponent/>
@@ -39,6 +42,9 @@ function App() {
         </Route>
         <Route exact path="/function-component-state">
           <FunctionState/>
+        </Route>
+        <Route exact path="/table-search">
+          <TableSearch/>
         </Route>
         <Route exact path="/user-data-radio">
           <Practice/>
