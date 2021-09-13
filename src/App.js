@@ -14,6 +14,7 @@ import ClassState from './componets/ClassState';
 import FunctionState from './componets/FunctionState';
 import Name from './componets/Name';
 import TableSearch from './componets/TableSearch';
+import ClassForm from './componets/ClassForm';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route exact path="/class-component-addition">
           <ClassComponent/>
+        </Route>
+        <Route exact path="/class-component-form">
+          <ClassForm/>
         </Route>
         <Route exact path="/class-component-counter">
           <ClassCounter/>

@@ -25,7 +25,7 @@ export default class ClassState extends Component {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">E-Mail Address</label>
-                            <input type="email" className="form-control" onChange={(e) => this.setState({ email: e.target.value })} id="email" aria-describedby="emailHelp" />
+                            <input type="email" className="form-control" onChange={(e) => this.setState({email: e.target.value })} id="email" aria-describedby="emailHelp" />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="phone" className="form-label">Mobile Number</label>
@@ -47,6 +47,7 @@ export default class ClassState extends Component {
                             <th>Mobile Number</th>
                             <th>Password</th>
                         </tr>
+
                     </thead>
                     <tbody>
                         <tr>

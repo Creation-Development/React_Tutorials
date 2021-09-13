@@ -18,6 +18,7 @@ export const Navbar = () => {
                                 <Link className="nav-link" aria-current="page" to="/">Home</Link>
                             </li>
                             <NavDropdown title="Class Component" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/class-component-form">Form</NavDropdown.Item>
                                 <NavDropdown.Item href="/class-component-addition">Addition</NavDropdown.Item>
                                 <NavDropdown.Item href="/class-component-counter">Counter</NavDropdown.Item>
                                 <NavDropdown.Item href="/class-component-state">State</NavDropdown.Item>
