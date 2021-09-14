@@ -5,7 +5,7 @@ export class Input extends Component {
         return (
             <div className="mb-3">
                 <label htmlFor={this.props.field} className="form-label">{this.props.fieldname}</label>
-                <input type="text" className="form-control" onChange={(e) => this.props.state[`${this.props.field}`]=(e.target.value)} id={this.props.field} aria-describedby="emailHelp" />
+                <input type={this.props.type} className="form-control" onChange={(e) => this.props.state[`${this.props.field}`]=(e.target.value)} id={this.props.field} aria-describedby="emailHelp" />
             </div>
         )
     }

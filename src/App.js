@@ -1,20 +1,19 @@
 import './App.css';
-import { Form } from './componets/Form';
+import { Form } from './components/Form';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import ClassComponent from './componets/ClassComponent';
-import { FunctionComponent } from './componets/FunctionComponent';
-import { Navbar } from './componets/Navbar';
-import { Practice } from './componets/Practice';
+import ClassComponent from './components/ClassComponent';
+import { FunctionComponent } from './components/FunctionComponent';
+import { Navbar } from './components/Navbar';
+import { Practice } from './components/Practice';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { DataOption } from './componets/DataOption';
-import ClassCounter from './componets/ClassCounter';
-import { FunctionCounter } from './componets/FunctionCounter';
-import UserData from './componets/UserData';
-import ClassState from './componets/ClassState';
-import FunctionState from './componets/FunctionState';
-import Name from './componets/Name';
-import TableSearch from './componets/TableSearch';
-import ClassForm from './componets/ClassForm';
+import { DataOption } from './components/DataOption';
+import ClassCounter from './components/ClassCounter';
+import { FunctionCounter } from './components/FunctionCounter';
+import UserData from './components/UserData';
+import ClassState from './components/ClassState';
+import FunctionState from './components/FunctionState';
+import TableSearch from './components/TableSearch';
+import ClassForm from './components/ClassForm';
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Form/>
-          <Name name="Harsh Gohil"/>
         </Route>
         <Route exact path="/class-component-addition">
           <ClassComponent/>

@@ -8,7 +8,8 @@ export default class ClassState extends Component {
             name: "",
             email: "",
             phone: "",
-            pass: ""
+            pass: "",
+            table:false
         }
     }
     render() {
@@ -35,9 +36,34 @@ export default class ClassState extends Component {
                             <label htmlFor="pass" className="form-label">Password</label>
                             <input type="password" className="form-control" onChange={(e) => this.setState({ pass: e.target.value })} id="pass" />
                         </div>
-                        <button type="submit" onClick={(e) => validation(e, this.state)} className="btn btn-success w-100 my-4">Submit</button>
+                        <button 
+                        type="submit" 
+                        onClick={
+                            (e) => {
+                                e.preventDefault()
+                                if (this.state.name.length <= 2) {
+                                    alert("name is too short...!!")
+                                }
+                                else if (!this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+                                    alert("email is not valid...!!")
+                                }
+                                else if (!this.state.phone.match(/[0-9]{10}/)) {
+                                    alert("mobile number is invalid")
+                                }
+                                else if (this.state.pass.length <= 8) {
+                                    alert("Password is too short....!!")
+                                }
+                                else {
+                                    show(e, this.state)
+                                    this.setState({ table: true })
+                                }
+                            }
+                        }
+                            className="btn btn-success w-100 my-4"
+                            >Submit</button>
                     </form>
                 </div>
+                {this.state.table===true?
                 <Table className="container my-4 text-center" striped bordered hover>
                     <thead>
                         <tr>
@@ -59,28 +85,16 @@ export default class ClassState extends Component {
                         </tr>
                     </tbody>
                 </Table>
+                :
+                null
+                }
             </>
         )
     }
 }
 
-var validation = (e, data) => {
-    e.preventDefault()
-    if (data.name.length <= 2) {
-        alert("name is too short...!!")
-    }
-    else if (!data.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-        alert("email is not valid...!!")
-    }
-    else if (!data.phone.match(/[0-9]{10}/)) {
-        alert("mobile number is invalid")
-    }
-    else if (data.pass.length <= 8) {
-        alert("Password is too short....!!")
-    }
-    else {
-        show(e, data)
-    }
+var validation = (e, data,table) => {
+    
 }
 
 function show(e, data) {
