@@ -237,7 +237,7 @@ var data = [
 
 function TableSearch() {
     const [search, setSearch] = useState("")
-    const [value, setValue] = useState('Choose Field')
+    const [value, setValue] = useState('')
     if (value == "Name") {
         var result = [...data.filter(item => item.name.includes(search))];
     }
@@ -250,7 +250,7 @@ function TableSearch() {
     if (value == "Website") {
         var result = [...data.filter(item => item.website.includes(search))];
     }
-    if (value == "All Field") {
+    if (value == "") {
         var result = [...data.filter(item => item.name.includes(search)),...data.filter(item => item.email.includes(search)),...data.filter(item => item.phone.includes(search)),...data.filter(item => item.website.includes(search))];
     }
     return (
@@ -258,12 +258,12 @@ function TableSearch() {
 
             <nav class="navbar navbar-dark bg-dark d-flex">
                 <div class="container-fluid" style={{ marginLeft: 900 }}>
-                    <DropdownButton id="dropdown-basic-button" title={`${value}`}>
+                    <DropdownButton id="dropdown-basic-button" title={`Choose Field`}>
                         <Dropdown.Item onClick={(e) => (setValue("Name"))}>Name</Dropdown.Item>
                         <Dropdown.Item onClick={(e) => (setValue("Email"))}>Email</Dropdown.Item>
                         <Dropdown.Item onClick={(e) => (setValue("Phone"))}>Phone</Dropdown.Item>
                         <Dropdown.Item onClick={(e) => (setValue("Website"))}>Website</Dropdown.Item>
-                        <Dropdown.Item onClick={(e) => (setValue("All Field"))}>All Field</Dropdown.Item>
+                        <Dropdown.Item onClick={(e) => (setValue(""))}>All Field</Dropdown.Item>
                     </DropdownButton>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" onChange={(e) => (setSearch(e.target.value))} aria-label="Search" />
@@ -301,6 +301,11 @@ function TableSearch() {
                         </tbody>
                     </table>
                     :
+                    <>
+                    {
+                        result.length==0?
+                        <h2 className="text-center text-danger my-4">No Result Found</h2>
+                        :
                     <table class="container my-4 table">
                         <thead>
                             <tr>
@@ -327,6 +332,8 @@ function TableSearch() {
                             }
                         </tbody>
                     </table>
+                    }
+                    </>
             }
         </>
     )
